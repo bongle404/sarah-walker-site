@@ -4,836 +4,309 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr Sarah Walker | Senior Psychologist | Gold Coast</title>
-  <meta name="description" content="Dr Sarah Walker is a Gold Coast clinical psychologist with over 20 years experience specialising in complex presentations — eating disorders, trauma, personality disorders, and anxiety. In-person and international sessions available." />
+  <meta name="description" content="Dr Sarah Walker is a Gold Coast clinical psychologist with over 20 years experience specialising in eating disorders, trauma, and personality disorders. In-person at Robina and international telehealth." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* ─── TOKENS ─────────────────────────────────────────────────── */
+    /* ─── TOKENS ─────────────────────────────────────────── */
     :root {
-      /* Blues */
-      --blue-deep:   #2A4A6B;   /* primary dark — headings, hero bg */
-      --blue-mid:    #3D6B9A;   /* medium — hover states, icons */
-      --blue-soft:   #6A9EC5;   /* accent — CTAs, links */
-      --blue-pale:   #C8DCF0;   /* pastel — borders, dividers */
-      --blue-wash:   #E8F2FA;   /* very light — section backgrounds */
-      --blue-snow:   #F2F7FC;   /* near-white section bg */
-
-      /* Neutrals */
-      --white:       #FFFFFF;
-      --ink:         #1C2B3A;
-      --ink-60:      #4A6070;
-      --ink-30:      #8BAAB8;
-      --rule:        rgba(100, 160, 210, 0.2);
-
-      /* Accent (muted teal-blue for CTA emphasis) */
-      --accent:      #3D7DB5;
-      --accent-dk:   #2A5E8A;
-      --accent-lt:   #EBF4FF;
-
-      --serif:  'Cormorant Garamond', Georgia, serif;
-      --sans:   'Inter', system-ui, sans-serif;
-
+      --blue-deep:  #2A4A6B;
+      --blue-mid:   #3D6B9A;
+      --blue-soft:  #6A9EC5;
+      --blue-pale:  #C8DCF0;
+      --blue-wash:  #E8F2FA;
+      --blue-snow:  #F2F7FC;
+      --white:      #FFFFFF;
+      --ink:        #1C2B3A;
+      --ink-60:     #4A6070;
+      --ink-30:     #8BAAB8;
+      --rule:       rgba(100,160,210,0.2);
+      --accent:     #3D7DB5;
+      --accent-dk:  #2A5E8A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Inter', system-ui, sans-serif;
       --max:     1120px;
       --gutter:  clamp(1.25rem, 5vw, 4rem);
       --section: clamp(4rem, 9vw, 7rem);
       --ease:    cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* ─── RESET ──────────────────────────────────────────────────── */
+    /* ─── RESET ──────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--sans); color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     img  { display: block; max-width: 100%; }
     a    { color: inherit; text-decoration: none; }
     ul   { list-style: none; }
 
-    /* ─── LAYOUT ─────────────────────────────────────────────────── */
+    /* ─── LAYOUT ─────────────────────────────────────────── */
     .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
     .section-pad { padding: var(--section) 0; }
 
-    /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
-    .overline {
-      font-family: var(--sans);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue-soft);
-    }
-    .h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.9rem, 3.8vw, 3rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--blue-deep);
-    }
-    .h3 {
-      font-family: var(--serif);
-      font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--blue-deep);
-    }
-    .lead {
-      font-size: clamp(0.98rem, 1.4vw, 1.1rem);
-      line-height: 1.8;
-      color: var(--ink-60);
-    }
+    /* ─── TYPOGRAPHY ─────────────────────────────────────── */
+    .overline { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-soft); }
+    .h2 { font-family: var(--serif); font-size: clamp(1.9rem, 3.8vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--blue-deep); }
+    .h3 { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.7rem); font-weight: 500; line-height: 1.25; color: var(--blue-deep); }
+    .lead { font-size: clamp(0.98rem, 1.4vw, 1.1rem); line-height: 1.8; color: var(--ink-60); }
 
-    /* ─── BUTTONS ────────────────────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.75rem;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      border-radius: 3px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.22s var(--ease);
-      white-space: nowrap;
-    }
+    /* ─── BUTTONS ────────────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 3px; border: none; cursor: pointer; transition: all 0.22s var(--ease); white-space: nowrap; }
     .btn svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2.2; fill: none; transition: transform 0.2s; flex-shrink: 0; }
     .btn:hover svg { transform: translateX(3px); }
-
     .btn-primary { background: var(--accent); color: var(--white); }
     .btn-primary:hover { background: var(--accent-dk); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--blue-deep);
-      border: 1.5px solid var(--blue-pale);
-    }
+    .btn-outline { background: transparent; color: var(--blue-deep); border: 1.5px solid var(--blue-pale); }
     .btn-outline:hover { border-color: var(--blue-soft); color: var(--accent); }
-
     .btn-white { background: var(--white); color: var(--blue-deep); }
     .btn-white:hover { background: var(--blue-snow); }
-
-    .btn-ghost-white {
-      background: transparent;
-      color: rgba(255,255,255,0.8);
-      border: 1.5px solid rgba(255,255,255,0.3);
-    }
+    .btn-ghost-white { background: transparent; color: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.3); }
     .btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
+    .btn-green { background: #3A8A6E; color: var(--white); }
+    .btn-green:hover { background: #2D6F58; }
 
-    /* ─── NAVIGATION ─────────────────────────────────────────────── */
-    #nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-    }
-    #nav.scrolled {
-      background: rgba(255,255,255,0.98);
-      border-bottom-color: var(--blue-pale);
-      box-shadow: 0 2px 20px rgba(42, 74, 107, 0.06);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      gap: 1.5rem;
-    }
-
-    /* Logo */
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-    .nav-logo-name {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--blue-deep);
-      letter-spacing: 0.01em;
-      line-height: 1;
-    }
-    .nav-logo-sub {
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink-30);
-      line-height: 1;
-    }
-
-    /* Desktop links */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex: 1;
-      justify-content: center;
-    }
-    .nav-menu a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--ink-60);
-      transition: color 0.2s;
-      position: relative;
-      padding-bottom: 2px;
-    }
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0; right: 0;
-      height: 1.5px;
-      background: var(--blue-soft);
-      transform: scaleX(0);
-      transition: transform 0.25s var(--ease);
-    }
+    /* ─── NAVIGATION ─────────────────────────────────────── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s; }
+    #nav.scrolled { background: rgba(255,255,255,0.98); border-bottom-color: var(--blue-pale); box-shadow: 0 2px 24px rgba(42,74,107,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1.5rem; }
+    .nav-logo { display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
+    .nav-logo-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--blue-deep); letter-spacing: 0.01em; line-height: 1; }
+    .nav-logo-sub { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-30); line-height: 1; }
+    .nav-menu { display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; }
+    .nav-menu a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-60); transition: color 0.2s; position: relative; padding-bottom: 2px; }
+    .nav-menu a::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 1.5px; background: var(--blue-soft); transform: scaleX(0); transition: transform 0.25s var(--ease); }
     .nav-menu a:hover { color: var(--blue-deep); }
     .nav-menu a:hover::after { transform: scaleX(1); }
-
-    /* CTA button */
     .nav-cta-wrap { flex-shrink: 0; }
-
-    /* Hamburger */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      border-radius: 4px;
-      transition: background 0.2s;
-      flex-shrink: 0;
-    }
+    .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 6px; border-radius: 4px; transition: background 0.2s; flex-shrink: 0; }
     .nav-toggle:hover { background: var(--blue-wash); }
-    .nav-toggle span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: var(--blue-deep);
-      border-radius: 2px;
-      transition: transform 0.3s var(--ease), opacity 0.3s;
-      transform-origin: center;
-    }
-    /* X state */
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--blue-deep); border-radius: 2px; transition: transform 0.3s var(--ease), opacity 0.3s; transform-origin: center; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    /* Mobile drawer */
-    .nav-drawer {
-      position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: var(--white);
-      border-bottom: 1px solid var(--blue-pale);
-      box-shadow: 0 12px 40px rgba(42,74,107,0.1);
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s var(--ease), padding 0.3s;
-      z-index: 199;
-    }
-    .nav-drawer.open {
-      max-height: 500px;
-      padding: 1rem 0 1.5rem;
-    }
-    .nav-drawer-inner {
-      display: flex;
-      flex-direction: column;
-    }
-    .nav-drawer a {
-      display: block;
-      padding: 0.9rem var(--gutter);
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--ink);
-      border-bottom: 1px solid var(--blue-wash);
-      transition: background 0.15s, color 0.15s;
-    }
+    .nav-drawer { position: fixed; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--blue-pale); box-shadow: 0 12px 40px rgba(42,74,107,0.1); max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); z-index: 199; }
+    .nav-drawer.open { max-height: 520px; }
+    .nav-drawer-inner { display: flex; flex-direction: column; padding: 0.5rem 0 1.5rem; }
+    .nav-drawer a { display: block; padding: 0.9rem var(--gutter); font-size: 0.95rem; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--blue-wash); transition: background 0.15s, color 0.15s; }
     .nav-drawer a:hover { background: var(--blue-wash); color: var(--blue-deep); }
-    .nav-drawer .drawer-cta {
-      margin: 1rem var(--gutter) 0;
-      display: flex;
-    }
-    .nav-drawer .drawer-cta .btn { width: 100%; justify-content: center; }
+    .drawer-cta { margin: 1rem var(--gutter) 0; display: flex; }
+    .drawer-cta .btn { width: 100%; justify-content: center; }
+    @media (max-width: 820px) { .nav-menu, .nav-cta-wrap { display: none; } .nav-toggle { display: flex; } }
+    @media (min-width: 821px) { .nav-drawer { display: none !important; } }
 
-    @media (max-width: 820px) {
-      .nav-menu, .nav-cta-wrap { display: none; }
-      .nav-toggle { display: flex; }
-    }
-    @media (min-width: 821px) {
-      .nav-drawer { display: none; }
-    }
-
-    /* ─── HERO ───────────────────────────────────────────────────── */
-    #hero {
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .hero-left {
-      background: var(--blue-deep);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 9rem var(--gutter) 5rem;
-      padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 1.75rem;
-      height: 1px;
-      background: var(--blue-pale);
-      flex-shrink: 0;
-    }
-    .hero-eyebrow span {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue-pale);
-      opacity: 0.7;
-    }
-    .hero-heading {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 4.2vw, 4.4rem);
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 1.75rem;
-    }
-    .hero-heading em {
-      display: block;
-      font-style: italic;
-      color: var(--blue-pale);
-    }
-    .hero-sub {
-      font-size: clamp(0.92rem, 1.2vw, 1.05rem);
-      line-height: 1.8;
-      color: rgba(200, 220, 240, 0.75);
-      max-width: 46ch;
-      margin-bottom: 2.5rem;
-    }
+    /* ─── HERO ───────────────────────────────────────────── */
+    #hero { min-height: 100svh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+    .hero-left { background: var(--blue-deep); display: flex; flex-direction: column; justify-content: center; padding: 9rem var(--gutter) 5rem; padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); position: relative; z-index: 2; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .hero-eyebrow::before { content: ''; width: 1.75rem; height: 1px; background: var(--blue-pale); flex-shrink: 0; }
+    .hero-eyebrow span { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-pale); opacity: 0.7; }
+    .hero-heading { font-family: var(--serif); font-size: clamp(2.4rem, 4.2vw, 4.4rem); font-weight: 400; line-height: 1.1; color: var(--white); margin-bottom: 1.75rem; }
+    .hero-heading em { display: block; font-style: italic; color: var(--blue-pale); }
+    .hero-sub { font-size: clamp(0.92rem, 1.2vw, 1.05rem); line-height: 1.8; color: rgba(200,220,240,0.75); max-width: 46ch; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .hero-stats {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(200,220,240,0.15);
-      display: flex;
-      gap: clamp(1.5rem, 4vw, 3rem);
-    }
-    .hero-stat-val {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1;
-    }
-    .hero-stat-lbl {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(200,220,240,0.5);
-      margin-top: 0.3rem;
-    }
+    .hero-stats { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(200,220,240,0.15); display: flex; gap: clamp(1.5rem, 4vw, 3rem); }
+    .hero-stat-val { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--white); line-height: 1; }
+    .hero-stat-lbl { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,220,240,0.5); margin-top: 0.3rem; }
 
-    /* Hero right — photo placeholder */
-    .hero-right {
+    /* Hero right with parallax */
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right-bg {
+      position: absolute; inset: -20%; /* oversized so parallax doesn't clip */
       background: linear-gradient(170deg, #3D6B9A 0%, #2A4A6B 50%, #1E3550 100%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      will-change: transform;
     }
-    .hero-right::before {
-      content: '';
+    /* Parallax decorative rings */
+    .hero-ring {
       position: absolute;
-      width: 480px; height: 480px;
-      border: 1px solid rgba(200,220,240,0.08);
       border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
+      border: 1px solid rgba(200,220,240,0.12);
+      will-change: transform;
     }
-    .hero-right::after {
-      content: '';
-      position: absolute;
-      width: 300px; height: 300px;
-      border: 1px solid rgba(200,220,240,0.14);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-    }
-    .hero-placeholder {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-    .hero-placeholder-initials {
-      font-family: var(--serif);
-      font-size: 7rem;
-      font-weight: 300;
-      color: rgba(200,220,240,0.2);
-      line-height: 1;
-    }
-    .hero-placeholder-note {
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(200,220,240,0.2);
-      margin-top: 1rem;
-    }
+    .hero-ring-1 { width: 520px; height: 520px; top: 50%; left: 50%; margin: -260px 0 0 -260px; }
+    .hero-ring-2 { width: 320px; height: 320px; top: 50%; left: 50%; margin: -160px 0 0 -160px; border-color: rgba(200,220,240,0.2); }
+    .hero-ring-3 { width: 160px; height: 160px; top: 50%; left: 50%; margin: -80px 0 0 -80px; border-color: rgba(200,220,240,0.15); background: rgba(200,220,240,0.03); }
+    .hero-placeholder { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; z-index: 2; }
+    .hero-placeholder-initials { font-family: var(--serif); font-size: 7rem; font-weight: 300; color: rgba(200,220,240,0.18); line-height: 1; }
+    .hero-placeholder-note { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,220,240,0.18); margin-top: 0.75rem; }
 
     @media (max-width: 860px) {
       #hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 7rem 1.5rem 3.5rem; }
       .hero-right { min-height: 280px; }
-      .hero-right::before { width: 240px; height: 240px; }
-      .hero-right::after  { width: 160px; height: 160px; }
+      .hero-ring-1 { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
+      .hero-ring-2 { width: 160px; height: 160px; margin: -80px 0 0 -80px; }
+      .hero-ring-3 { display: none; }
       .hero-placeholder-initials { font-size: 5rem; }
     }
 
-    /* ─── TRUST BAR ──────────────────────────────────────────────── */
-    #trust-bar {
-      background: var(--blue-deep);
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(200,220,240,0.08);
-    }
-    .trust-list {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem 0;
-      row-gap: 0.25rem;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 1rem;
-      color: rgba(200,220,240,0.6);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .trust-item svg { width: 12px; height: 12px; stroke: var(--blue-pale); stroke-width: 2; fill: none; flex-shrink: 0; }
-    .trust-sep {
-      width: 1px;
-      height: 1rem;
-      background: rgba(200,220,240,0.12);
-      flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .trust-sep { display: none; }
-      .trust-list { gap: 0; }
-      .trust-item { padding: 0.3rem 0.6rem; font-size: 0.62rem; }
+    /* ─── PARALLAX BLOBS (decorative background shapes) ── */
+    .parallax-blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      will-change: transform;
     }
 
-    /* ─── WHO I HELP ─────────────────────────────────────────────── */
-    #who { background: var(--blue-snow); }
+    /* ─── TRUST BAR ──────────────────────────────────────── */
+    #trust-bar { background: var(--blue-deep); padding: 1rem 0; border-bottom: 1px solid rgba(200,220,240,0.08); }
+    .trust-list { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 1rem; color: rgba(200,220,240,0.6); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+    .trust-item svg { width: 12px; height: 12px; stroke: var(--blue-pale); stroke-width: 2; fill: none; flex-shrink: 0; }
+    .trust-sep { width: 1px; height: 1rem; background: rgba(200,220,240,0.12); flex-shrink: 0; }
+    @media (max-width: 600px) { .trust-sep { display: none; } .trust-item { padding: 0.3rem 0.6rem; font-size: 0.62rem; } }
+
+    /* ─── WHO I HELP ─────────────────────────────────────── */
+    #who { background: var(--blue-snow); position: relative; overflow: hidden; }
     .who-header { max-width: 58ch; margin-bottom: 3.5rem; }
     .who-header .overline { margin-bottom: 0.9rem; }
-    .who-header .h2 { margin-bottom: 1.1rem; }
-    .who-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--blue-pale);
-    }
-    .who-card {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s var(--ease);
-    }
-    .who-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue-soft), var(--blue-mid));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s var(--ease);
-    }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--blue-pale); }
+    .who-card { background: var(--white); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s var(--ease); }
+    .who-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue-soft), var(--blue-mid)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease); }
     .who-card:hover { transform: translateY(-3px); }
     .who-card:hover::after { transform: scaleX(1); }
-    .who-num {
-      font-family: var(--serif);
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--blue-pale);
-      line-height: 1;
-      margin-bottom: 1.25rem;
-    }
-    .who-card .h3 { margin-bottom: 0.75rem; }
-    .who-card p { font-size: 0.9rem; line-height: 1.75; color: var(--ink-60); }
-    @media (max-width: 700px) {
-      .who-grid { grid-template-columns: 1fr; }
-    }
+    .who-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--blue-pale); line-height: 1; margin-bottom: 1.25rem; }
+    .who-card p { font-size: 0.9rem; line-height: 1.75; color: var(--ink-60); margin-top: 0.75rem; }
+    @media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; } }
 
-    /* ─── SERVICES ───────────────────────────────────────────────── */
+    /* ─── SERVICES ───────────────────────────────────────── */
     #services { background: var(--white); }
-    .services-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: end;
-      margin-bottom: 3.5rem;
-    }
-    .services-top .overline { margin-bottom: 0.9rem; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .svc-card {
-      border: 1.5px solid var(--blue-pale);
-      border-radius: 4px;
-      padding: 2.25rem 2rem;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease);
-    }
-    .svc-card:hover {
-      border-color: var(--blue-soft);
-      box-shadow: 0 6px 32px rgba(61,107,154,0.1);
-      transform: translateY(-2px);
-    }
-    .svc-icon {
-      width: 42px; height: 42px;
-      background: var(--blue-wash);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.5rem;
-    }
+    .services-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 3.5rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .svc-card { border: 1.5px solid var(--blue-pale); border-radius: 4px; padding: 2.25rem 2rem; transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease); }
+    .svc-card:hover { border-color: var(--blue-soft); box-shadow: 0 6px 32px rgba(61,107,154,0.1); transform: translateY(-2px); }
+    .svc-icon { width: 42px; height: 42px; background: var(--blue-wash); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
     .svc-icon svg { width: 18px; height: 18px; stroke: var(--blue-mid); stroke-width: 1.5; fill: none; }
-    .svc-card .h3 { margin-bottom: 0.7rem; }
-    .svc-card p { font-size: 0.88rem; line-height: 1.8; color: var(--ink-60); margin-bottom: 1.5rem; }
-    .svc-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue-soft);
-      transition: gap 0.2s, color 0.2s;
-    }
+    .svc-card p { font-size: 0.88rem; line-height: 1.8; color: var(--ink-60); margin: 0.7rem 0 1.5rem; }
+    .svc-link { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-soft); transition: gap 0.2s, color 0.2s; }
     .svc-link:hover { gap: 0.7rem; color: var(--blue-mid); }
     .svc-link svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; }
-    @media (max-width: 860px) {
-      .services-top { grid-template-columns: 1fr; gap: 1rem; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 560px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 860px) { .services-top { grid-template-columns: 1fr; gap: 1rem; } .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
 
-    /* ─── ABOUT ──────────────────────────────────────────────────── */
-    #about { background: var(--blue-wash); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: clamp(2.5rem, 6vw, 6rem);
-      align-items: center;
-    }
+    /* ─── ABOUT ──────────────────────────────────────────── */
+    #about { background: var(--blue-wash); position: relative; overflow: hidden; }
+    .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; position: relative; z-index: 2; }
     .about-img-wrap { position: relative; }
-    .about-placeholder {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: linear-gradient(160deg, var(--blue-mid) 0%, var(--blue-deep) 100%);
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--serif);
-      font-size: 7rem;
-      color: rgba(200,220,240,0.2);
-      font-weight: 300;
-    }
-    .about-badge {
-      position: absolute;
-      bottom: -1.25rem;
-      right: -1.25rem;
-      width: 92px; height: 92px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(61,125,181,0.35);
-    }
+    .about-placeholder { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, var(--blue-mid) 0%, var(--blue-deep) 100%); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 7rem; color: rgba(200,220,240,0.2); font-weight: 300; }
+    .about-badge { position: absolute; bottom: -1.25rem; right: -1.25rem; width: 92px; height: 92px; background: var(--accent); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); box-shadow: 0 4px 20px rgba(61,125,181,0.35); }
     .about-badge-n { font-family: var(--serif); font-size: 1.8rem; font-weight: 500; line-height: 1; }
     .about-badge-t { font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; line-height: 1.3; margin-top: 0.2rem; text-align: center; }
     .about-text .overline { margin-bottom: 0.9rem; }
-    .about-text .h2 { margin-bottom: 1.25rem; }
-    .about-text .lead { margin-bottom: 1.25rem; }
     .about-text p { font-size: 0.9rem; line-height: 1.8; color: var(--ink-60); margin-bottom: 1rem; }
     .creds-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .cred-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      color: var(--ink-60);
-      line-height: 1.4;
-    }
-    .cred-row::before {
-      content: '';
-      width: 1.25rem; height: 1px;
-      background: var(--blue-soft);
-      margin-top: 0.7em;
-      flex-shrink: 0;
-    }
-    @media (max-width: 720px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .about-badge { right: 0.5rem; }
-    }
+    .cred-row { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.85rem; color: var(--ink-60); line-height: 1.4; }
+    .cred-row::before { content: ''; width: 1.25rem; height: 1px; background: var(--blue-soft); margin-top: 0.7em; flex-shrink: 0; }
+    @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-badge { right: 0.5rem; } }
 
-    /* ─── SPECIALITIES ───────────────────────────────────────────── */
-    #specialities { background: var(--blue-deep); }
-    #specialities .overline { margin-bottom: 0.9rem; }
-    #specialities .h2 { color: var(--white); max-width: 48ch; margin-bottom: 3rem; }
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid rgba(200,220,240,0.08);
-    }
-    .spec-item {
-      padding: 1.75rem 1.5rem;
-      border-right: 1px solid rgba(200,220,240,0.08);
-      border-bottom: 1px solid rgba(200,220,240,0.08);
-      transition: background 0.25s;
-    }
+    /* ─── SPECIALITIES ───────────────────────────────────── */
+    #specialities { background: var(--blue-deep); position: relative; overflow: hidden; }
+    #specialities .container { position: relative; z-index: 2; }
+    .spec-header { margin-bottom: 3rem; }
+    .spec-header .overline { color: var(--blue-pale); opacity: 0.7; margin-bottom: 0.9rem; }
+    .spec-header .h2 { color: var(--white); }
+    .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(200,220,240,0.08); }
+    .spec-item { padding: 1.75rem 1.5rem; border-right: 1px solid rgba(200,220,240,0.08); border-bottom: 1px solid rgba(200,220,240,0.08); transition: background 0.25s; }
     .spec-item:hover { background: rgba(200,220,240,0.05); }
     .spec-item:nth-child(4n) { border-right: none; }
-    .spec-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--blue-pale);
-      opacity: 0.4;
-      margin-bottom: 1rem;
-    }
+    .spec-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-pale); opacity: 0.4; margin-bottom: 1rem; }
     .spec-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--white); margin-bottom: 0.4rem; }
     .spec-desc { font-size: 0.8rem; line-height: 1.65; color: rgba(200,220,240,0.45); }
-    @media (max-width: 860px) {
-      .spec-grid { grid-template-columns: repeat(2, 1fr); }
-      .spec-item:nth-child(4n) { border-right: 1px solid rgba(200,220,240,0.08); }
-      .spec-item:nth-child(2n) { border-right: none; }
-    }
-    @media (max-width: 480px) {
-      .spec-grid { grid-template-columns: 1fr; }
-      .spec-item { border-right: none !important; }
-    }
+    /* Parallax ring for spec section */
+    .spec-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(200,220,240,0.04); will-change: transform; }
+    @media (max-width: 860px) { .spec-grid { grid-template-columns: repeat(2, 1fr); } .spec-item:nth-child(4n) { border-right: 1px solid rgba(200,220,240,0.08); } .spec-item:nth-child(2n) { border-right: none; } }
+    @media (max-width: 480px) { .spec-grid { grid-template-columns: 1fr; } .spec-item { border-right: none !important; } }
 
-    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
+    /* ─── TESTIMONIALS ───────────────────────────────────── */
     #testimonials { background: var(--white); }
-    #testimonials .overline { margin-bottom: 0.9rem; }
-    #testimonials .h2 { max-width: 40ch; margin-bottom: 3rem; }
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .test-card {
-      background: var(--blue-snow);
-      border: 1.5px solid var(--blue-pale);
-      border-radius: 4px;
-      padding: 2.25rem 2rem;
-    }
-    .test-mark {
-      font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 300;
-      color: var(--blue-soft);
-      opacity: 0.3;
-      line-height: 0.6;
-      margin-bottom: 1.25rem;
-    }
-    .test-text {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-style: italic;
-      line-height: 1.65;
-      color: var(--blue-deep);
-      margin-bottom: 1.75rem;
-    }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .test-card { background: var(--blue-snow); border: 1.5px solid var(--blue-pale); border-radius: 4px; padding: 2.25rem 2rem; }
+    .test-mark { font-family: var(--serif); font-size: 4rem; font-weight: 300; color: var(--blue-soft); opacity: 0.3; line-height: 0.6; margin-bottom: 1.25rem; }
+    .test-text { font-family: var(--serif); font-size: 1.1rem; font-style: italic; line-height: 1.65; color: var(--blue-deep); margin-bottom: 1.75rem; }
     .test-byline { display: flex; align-items: center; gap: 0.75rem; }
-    .test-av {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: var(--blue-wash);
-      border: 1.5px solid var(--blue-pale);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: var(--blue-soft);
-    }
+    .test-av { width: 36px; height: 36px; border-radius: 50%; background: var(--blue-wash); border: 1.5px solid var(--blue-pale); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--blue-soft); }
     .test-name { font-size: 0.8rem; font-weight: 600; color: var(--blue-deep); }
     .test-detail { font-size: 0.7rem; color: var(--ink-30); margin-top: 0.1rem; }
     @media (max-width: 720px) { .test-grid { grid-template-columns: 1fr; } }
 
-    /* ─── FAQ ────────────────────────────────────────────────────── */
+    /* ─── FAQ ────────────────────────────────────────────── */
     #faq { background: var(--blue-snow); }
-    .faq-wrap {
-      display: grid;
-      grid-template-columns: 3fr 7fr;
-      gap: clamp(2.5rem, 6vw, 6rem);
-      align-items: start;
-    }
+    .faq-wrap { display: grid; grid-template-columns: 3fr 7fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
     .faq-aside .overline { margin-bottom: 0.9rem; }
-    .faq-aside .h2 { margin-bottom: 1rem; }
-    .faq-aside p { font-size: 0.9rem; line-height: 1.75; color: var(--ink-60); margin-bottom: 2rem; }
+    .faq-aside p { font-size: 0.9rem; line-height: 1.75; color: var(--ink-60); margin: 1rem 0 2rem; }
     .faq-items { display: flex; flex-direction: column; }
     .faq-item { border-bottom: 1px solid var(--blue-pale); }
     .faq-item:first-child { border-top: 1px solid var(--blue-pale); }
-    .faq-q {
-      width: 100%; background: none; border: none; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 0;
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--blue-deep);
-      text-align: left;
-      gap: 1rem;
-      transition: color 0.2s;
-    }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--blue-deep); text-align: left; gap: 1rem; transition: color 0.2s; }
     .faq-q:hover { color: var(--accent); }
-    .faq-q-icon {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: var(--blue-wash);
-      border: 1px solid var(--blue-pale);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.2s, transform 0.3s var(--ease);
-    }
+    .faq-q-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--blue-wash); border: 1px solid var(--blue-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
     .faq-q-icon svg { width: 12px; height: 12px; stroke: var(--blue-soft); stroke-width: 2.5; fill: none; transition: transform 0.3s var(--ease); }
     .faq-item.open .faq-q-icon { background: var(--accent); border-color: var(--accent); }
     .faq-item.open .faq-q-icon svg { stroke: var(--white); transform: rotate(45deg); }
-    .faq-a {
-      font-size: 0.88rem;
-      line-height: 1.8;
-      color: var(--ink-60);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s var(--ease), padding 0.3s;
-    }
+    .faq-a { font-size: 0.88rem; line-height: 1.8; color: var(--ink-60); max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease), padding 0.3s; }
     .faq-item.open .faq-a { max-height: 500px; padding-bottom: 1.25rem; }
     @media (max-width: 700px) { .faq-wrap { grid-template-columns: 1fr; } }
 
-    /* ─── FOR GPS ────────────────────────────────────────────────── */
+    /* ─── FOR GPS ────────────────────────────────────────── */
     #gp { background: var(--white); }
-    .gp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2.5rem, 6vw, 5rem);
-      align-items: start;
-    }
+    .gp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
     .gp-left .overline { margin-bottom: 0.9rem; }
-    .gp-left .h2 { margin-bottom: 1.1rem; }
-    .gp-left p { font-size: 0.9rem; line-height: 1.8; color: var(--ink-60); margin-bottom: 0.75rem; }
+    .gp-left p { font-size: 0.9rem; line-height: 1.8; color: var(--ink-60); margin: 1rem 0 0; }
     .gp-feats { margin: 1.75rem 0; display: flex; flex-direction: column; gap: 0.75rem; }
-    .gp-feat {
-      display: flex; align-items: flex-start; gap: 0.6rem;
-      font-size: 0.88rem; color: var(--ink-60); line-height: 1.5;
-    }
-    .gp-feat-dot {
-      width: 6px; height: 6px;
-      background: var(--blue-soft);
-      border-radius: 50%;
-      margin-top: 0.45em;
-      flex-shrink: 0;
-    }
-    .gp-card {
-      background: var(--blue-snow);
-      border: 1.5px solid var(--blue-pale);
-      border-radius: 4px;
-      padding: 2.25rem 2rem;
-    }
-    .gp-card .h3 { margin-bottom: 0.6rem; }
-    .gp-card > p { font-size: 0.88rem; line-height: 1.75; color: var(--ink-60); margin-bottom: 1.75rem; }
+    .gp-feat { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--ink-60); line-height: 1.5; }
+    .gp-feat-dot { width: 6px; height: 6px; background: var(--blue-soft); border-radius: 50%; margin-top: 0.45em; flex-shrink: 0; }
+    .gp-card { background: var(--blue-snow); border: 1.5px solid var(--blue-pale); border-radius: 4px; padding: 2.25rem 2rem; }
+    .gp-card > p { font-size: 0.88rem; line-height: 1.75; color: var(--ink-60); margin: 0.6rem 0 1.75rem; }
     .gp-rows { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 2rem; }
     .gp-row { display: flex; gap: 0.5rem; font-size: 0.83rem; }
     .gp-lbl { color: var(--ink-30); width: 6.5rem; flex-shrink: 0; }
     .gp-val { color: var(--ink); font-weight: 500; }
     @media (max-width: 720px) { .gp-grid { grid-template-columns: 1fr; } }
 
-    /* ─── BOOKING CTA ────────────────────────────────────────────── */
-    #book {
+    /* ─── BOOKING SECTION ────────────────────────────────── */
+    #book { background: var(--blue-snow); position: relative; overflow: hidden; }
+    #book .container { position: relative; z-index: 2; }
+    .book-intro { text-align: center; max-width: 60ch; margin: 0 auto 4rem; }
+    .book-intro .overline { margin-bottom: 0.9rem; }
+    .book-intro .h2 { margin-bottom: 1rem; }
+    .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+    .book-card { background: var(--white); border: 1.5px solid var(--blue-pale); border-radius: 6px; padding: 2.5rem 2rem; transition: border-color 0.25s, box-shadow 0.25s; }
+    .book-card:hover { border-color: var(--blue-soft); box-shadow: 0 6px 32px rgba(61,107,154,0.08); }
+    .book-card-icon { width: 48px; height: 48px; background: var(--blue-wash); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+    .book-card-icon svg { width: 22px; height: 22px; stroke: var(--blue-mid); stroke-width: 1.5; fill: none; }
+    .book-card .h3 { margin-bottom: 0.5rem; }
+    .book-card-sub { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 1.1rem; }
+    .book-card p { font-size: 0.88rem; line-height: 1.75; color: var(--ink-60); margin-bottom: 1.5rem; }
+    .book-details { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.75rem; padding: 1.25rem; background: var(--blue-snow); border-radius: 4px; }
+    .book-detail-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.83rem; color: var(--ink-60); }
+    .book-detail-row svg { width: 13px; height: 13px; stroke: var(--blue-soft); stroke-width: 1.5; fill: none; flex-shrink: 0; margin-top: 0.15em; }
+    .book-card-actions { display: flex; flex-direction: column; gap: 0.6rem; }
+    .book-card-actions .btn { justify-content: center; }
+    /* Parallax blob behind book section */
+    .book-blob { background: radial-gradient(circle, rgba(100,160,210,0.08) 0%, transparent 70%); }
+
+    .book-note { text-align: center; padding: 1.5rem; background: rgba(61,125,181,0.06); border: 1px solid var(--blue-pale); border-radius: 4px; font-size: 0.88rem; color: var(--ink-60); line-height: 1.7; }
+    .book-note strong { color: var(--blue-deep); font-weight: 600; }
+
+    @media (max-width: 640px) { .book-grid { grid-template-columns: 1fr; } }
+
+    /* ─── CTA BANNER ─────────────────────────────────────── */
+    #cta-banner {
       background: linear-gradient(135deg, var(--blue-deep) 0%, #1E3550 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    #book::before {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      border: 1px solid rgba(200,220,240,0.05);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-    }
-    #book::after {
-      content: '';
-      position: absolute;
-      width: 420px; height: 420px;
-      border: 1px solid rgba(200,220,240,0.08);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-    }
-    .book-inner { position: relative; z-index: 2; }
-    #book .overline { margin-bottom: 1.25rem; }
-    #book .h2 { color: var(--white); max-width: 26ch; margin: 0 auto 1.25rem; }
-    #book .lead { color: rgba(200,220,240,0.65); max-width: 52ch; margin: 0 auto 2.5rem; }
-    .book-actions { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
-    .book-note {
-      margin-top: 1.75rem;
-      font-size: 0.73rem;
-      letter-spacing: 0.07em;
-      color: rgba(200,220,240,0.3);
-    }
+    #cta-banner .container { position: relative; z-index: 2; }
+    .cta-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(200,220,240,0.06); will-change: transform; }
+    #cta-banner .overline { color: var(--blue-pale); opacity: 0.7; margin-bottom: 1.25rem; }
+    #cta-banner .h2 { color: var(--white); max-width: 26ch; margin: 0 auto 1.25rem; }
+    #cta-banner .lead { color: rgba(200,220,240,0.65); max-width: 52ch; margin: 0 auto 2.5rem; }
+    .cta-actions { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .cta-note { margin-top: 1.75rem; font-size: 0.73rem; letter-spacing: 0.07em; color: rgba(200,220,240,0.3); }
 
-    /* ─── FOOTER ─────────────────────────────────────────────────── */
-    #footer {
-      background: #111B24;
-      padding: 3.5rem 0 1.75rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2.5fr 1fr 1fr 2fr;
-      gap: 2.5rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(200,220,240,0.06);
-      margin-bottom: 1.75rem;
-    }
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    #footer { background: #111B24; padding: 3.5rem 0 1.75rem; }
+    .footer-grid { display: grid; grid-template-columns: 2.5fr 1fr 1fr 2fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(200,220,240,0.06); margin-bottom: 1.75rem; }
     .footer-brand-name { font-family: var(--serif); font-size: 1.3rem; color: var(--white); margin-bottom: 0.3rem; }
     .footer-brand-creds { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,220,240,0.25); margin-bottom: 1rem; }
     .footer-brand-desc { font-size: 0.82rem; line-height: 1.7; color: rgba(200,220,240,0.35); }
@@ -841,24 +314,17 @@
     .footer-links { display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-links a { font-size: 0.82rem; color: rgba(200,220,240,0.4); transition: color 0.2s; }
     .footer-links a:hover { color: rgba(200,220,240,0.8); }
-    .footer-contact-row {
-      display: flex; align-items: flex-start; gap: 0.6rem;
-      font-size: 0.82rem; color: rgba(200,220,240,0.4); margin-bottom: 0.75rem; line-height: 1.5;
-    }
+    .footer-contact-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: rgba(200,220,240,0.4); margin-bottom: 0.75rem; line-height: 1.5; }
     .footer-contact-row svg { width: 13px; height: 13px; stroke: var(--blue-soft); stroke-width: 1.5; fill: none; flex-shrink: 0; margin-top: 0.15em; opacity: 0.6; }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
-      font-size: 0.72rem; color: rgba(200,220,240,0.2);
-    }
+    .footer-contact-row a { color: rgba(200,220,240,0.55); transition: color 0.2s; }
+    .footer-contact-row a:hover { color: rgba(200,220,240,0.9); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; font-size: 0.72rem; color: rgba(200,220,240,0.2); }
     .footer-bottom a { color: rgba(200,220,240,0.3); transition: color 0.2s; }
     .footer-bottom a:hover { color: rgba(200,220,240,0.65); }
     @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 500px)  {
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
+    @media (max-width: 500px)  { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
 
-    /* ─── SCROLL REVEAL ──────────────────────────────────────────── */
+    /* ─── SCROLL REVEAL ──────────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
     .reveal.visible { opacity: 1; transform: none; }
     .reveal-d1 { transition-delay: 0.1s; }
@@ -869,47 +335,43 @@
 </head>
 <body>
 
-<!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
+<!-- ══ NAV ═══════════════════════════════════════════════════════ -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
-
       <a href="/" class="nav-logo" aria-label="Dr Sarah Walker — home">
         <span class="nav-logo-name">Dr Sarah Walker</span>
         <span class="nav-logo-sub">Clinical Psychologist · Gold Coast</span>
       </a>
-
       <ul class="nav-menu" role="list">
         <li><a href="#who">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#specialities">Specialities</a></li>
         <li><a href="#gp">For GPs</a></li>
         <li><a href="#faq">FAQs</a></li>
+        <li><a href="#book">Book</a></li>
       </ul>
-
       <div class="nav-cta-wrap">
         <a href="#book" class="btn btn-primary">
           Book a Consultation
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
     </div>
   </div>
 </nav>
 
-<!-- Mobile drawer -->
-<div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Navigation menu">
+<div class="nav-drawer" id="navDrawer">
   <div class="nav-drawer-inner">
-    <a href="#who"         onclick="closeDrawer()">About</a>
-    <a href="#services"    onclick="closeDrawer()">Services</a>
+    <a href="#who"          onclick="closeDrawer()">About</a>
+    <a href="#services"     onclick="closeDrawer()">Services</a>
     <a href="#specialities" onclick="closeDrawer()">Specialities</a>
-    <a href="#gp"          onclick="closeDrawer()">For GPs</a>
-    <a href="#faq"         onclick="closeDrawer()">FAQs</a>
+    <a href="#gp"           onclick="closeDrawer()">For GPs</a>
+    <a href="#faq"          onclick="closeDrawer()">FAQs</a>
+    <a href="#book"         onclick="closeDrawer()">Book</a>
     <div class="drawer-cta">
       <a href="#book" class="btn btn-primary" onclick="closeDrawer()">
         Book a Consultation
@@ -920,7 +382,7 @@
 </div>
 
 
-<!-- ═══ HERO ════════════════════════════════════════════════════════ -->
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Introduction">
   <div class="hero-left">
     <div class="hero-eyebrow"><span>Gold Coast, Australia &amp; International</span></div>
@@ -939,21 +401,16 @@
       <a href="#who" class="btn btn-ghost-white">Learn More</a>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="hero-stat-val">20+</div>
-        <div class="hero-stat-lbl">Years Experience</div>
-      </div>
-      <div>
-        <div class="hero-stat-val">ISTDP</div>
-        <div class="hero-stat-lbl">Accredited Therapist</div>
-      </div>
-      <div>
-        <div class="hero-stat-val">AHPRA</div>
-        <div class="hero-stat-lbl">Registered</div>
-      </div>
+      <div><div class="hero-stat-val">20+</div><div class="hero-stat-lbl">Years Experience</div></div>
+      <div><div class="hero-stat-val">ISTDP</div><div class="hero-stat-lbl">Accredited Therapist</div></div>
+      <div><div class="hero-stat-val">AHPRA</div><div class="hero-stat-lbl">Registered</div></div>
     </div>
   </div>
   <div class="hero-right" aria-hidden="true">
+    <div class="hero-right-bg" data-parallax="0.25"></div>
+    <div class="hero-ring hero-ring-1" data-parallax="0.12"></div>
+    <div class="hero-ring hero-ring-2" data-parallax="0.2"></div>
+    <div class="hero-ring hero-ring-3" data-parallax="0.32"></div>
     <div class="hero-placeholder">
       <div class="hero-placeholder-initials">SW</div>
       <div class="hero-placeholder-note">Portrait Photography</div>
@@ -962,53 +419,35 @@
 </section>
 
 
-<!-- ═══ TRUST BAR ════════════════════════════════════════════════════ -->
+<!-- ══ TRUST BAR ═════════════════════════════════════════════════ -->
 <div id="trust-bar" role="complementary" aria-label="Credentials">
   <div class="container">
     <ul class="trust-list" role="list">
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        MPsych (Clinical)
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>MPsych (Clinical)</li>
       <li class="trust-sep" aria-hidden="true"></li>
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        DPsych (Clinical)
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>DPsych (Clinical)</li>
       <li class="trust-sep" aria-hidden="true"></li>
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        MAPS Member
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>MAPS Member</li>
       <li class="trust-sep" aria-hidden="true"></li>
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        MCCP Member
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>MCCP Member</li>
       <li class="trust-sep" aria-hidden="true"></li>
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        ISTDP Accredited
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>ISTDP Accredited</li>
       <li class="trust-sep" aria-hidden="true"></li>
-      <li class="trust-item">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        AHPRA Registered
-      </li>
+      <li class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>AHPRA Registered</li>
     </ul>
   </div>
 </div>
 
 
-<!-- ═══ WHO I HELP ════════════════════════════════════════════════════ -->
+<!-- ══ WHO I HELP ════════════════════════════════════════════════ -->
 <section id="who" class="section-pad" aria-labelledby="who-h2">
-  <div class="container">
+  <!-- Parallax background blob -->
+  <div class="parallax-blob" data-parallax="0.15" style="width:500px;height:500px;background:radial-gradient(circle,rgba(100,160,210,0.07) 0%,transparent 70%);top:-100px;right:-150px;"></div>
+  <div class="container" style="position:relative;z-index:2;">
     <div class="who-header reveal">
       <p class="overline">Who I Work With</p>
-      <h2 id="who-h2" class="h2">You don't have to keep explaining yourself from the beginning.</h2>
-      <p class="lead" style="margin-top:1rem;">
-        Many of the people I work with have seen other therapists. They're not new to self-reflection — they're exhausted from not finding the right fit. I specialise in presentations that require depth, time, and clinical precision.
-      </p>
+      <h2 id="who-h2" class="h2" style="margin-top:0.9rem;">You don't have to keep explaining yourself from the beginning.</h2>
+      <p class="lead" style="margin-top:1rem;">Many of the people I work with have seen other therapists. They're not new to self-reflection — they're exhausted from not finding the right fit. I specialise in presentations that require depth, time, and clinical precision.</p>
     </div>
     <div class="who-grid">
       <div class="who-card reveal reveal-d1">
@@ -1019,19 +458,19 @@
       <div class="who-card reveal reveal-d2">
         <div class="who-num">02</div>
         <h3 class="h3">Adults with complex trauma and difficult histories</h3>
-        <p>Childhood adversity, relational trauma, experiences that were never properly acknowledged. You've carried them long enough. I use evidence-based approaches that go beyond talking.</p>
+        <p>Childhood adversity, relational trauma, experiences never properly acknowledged. You've carried them long enough. I use evidence-based approaches that go beyond talking.</p>
       </div>
       <div class="who-card reveal reveal-d3">
         <div class="who-num">03</div>
         <h3 class="h3">Clinicians seeking supervision and specialist training</h3>
-        <p>I work with psychologists, counsellors, and mental health practitioners seeking high-quality ISTDP training and clinical supervision — in Australia and internationally.</p>
+        <p>I work with psychologists, counsellors, and mental health practitioners seeking high-quality ISTDP training and supervision — in Australia and internationally.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ SERVICES ══════════════════════════════════════════════════════ -->
+<!-- ══ SERVICES ══════════════════════════════════════════════════ -->
 <section id="services" class="section-pad" aria-labelledby="services-h2">
   <div class="container">
     <div class="services-top">
@@ -1040,41 +479,37 @@
         <h2 id="services-h2" class="h2" style="margin-top:0.9rem;">Specialist psychology for complex presentations.</h2>
       </div>
       <div class="reveal reveal-d1">
-        <p class="lead">All services are delivered with clinical rigour and individual care. Sessions are available in-person on the Gold Coast and online across Australia and internationally.</p>
+        <p class="lead">All services are delivered with clinical rigour and individual care. Sessions available in-person on the Gold Coast and online across Australia and internationally.</p>
       </div>
     </div>
     <div class="services-grid">
       <div class="svc-card reveal">
-        <div class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        </div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
         <h3 class="h3">Individual Therapy</h3>
         <p>One-on-one sessions for adults dealing with anxiety, depression, trauma, eating disorders, and personality difficulties. Predominantly ISTDP-informed, tailored to your presentation.</p>
-        <a href="#book" class="svc-link">Enquire <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#book" class="svc-link">Book in-person or online <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="svc-card reveal reveal-d1">
-        <div class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h3 class="h3">Clinician Training &amp; Supervision</h3>
-        <p>Professional development, ISTDP training, and clinical supervision for psychologists and mental health practitioners seeking to deepen their therapeutic practice.</p>
-        <a href="#book" class="svc-link">Enquire <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p>Professional development, ISTDP training, and clinical supervision for psychologists and practitioners seeking to deepen their practice. Individual and group formats available.</p>
+        <a href="#book" class="svc-link">Enquire about supervision <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="svc-card reveal reveal-d2">
-        <div class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <h3 class="h3">International Online Sessions</h3>
-        <p>Secure telehealth for clients in the UK, USA, Europe, and Asia. Suited to Australian expatriates and clients who prefer the privacy of remote sessions with a highly credentialled practitioner.</p>
-        <a href="#book" class="svc-link">Enquire <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p>Secure telehealth for clients in the UK, USA, Europe, and Asia. Suited to Australian expatriates and clients who prefer the privacy of sessions with a highly credentialled practitioner.</p>
+        <a href="#book" class="svc-link">Book an online session <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ ABOUT ══════════════════════════════════════════════════════════ -->
+<!-- ══ ABOUT ══════════════════════════════════════════════════════ -->
 <section id="about" class="section-pad" aria-labelledby="about-h2">
+  <!-- Parallax blob -->
+  <div class="parallax-blob" data-parallax="-0.1" style="width:600px;height:600px;background:radial-gradient(circle,rgba(61,107,154,0.06) 0%,transparent 70%);bottom:-200px;left:-200px;"></div>
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal">
@@ -1087,12 +522,9 @@
       <div class="about-text">
         <p class="overline reveal">About Dr Walker</p>
         <h2 id="about-h2" class="h2 reveal reveal-d1" style="margin-top:0.9rem;">A senior psychologist who takes complex presentations seriously.</h2>
-        <p class="lead reveal reveal-d2" style="margin-top:1.1rem;">
-          I've spent over two decades working with people whose difficulties don't fit neatly into a six-week programme. My clinical work is grounded in Intensive Short-Term Dynamic Psychotherapy (ISTDP) — an evidence-based approach with strong outcomes for complex presentations.
-        </p>
-        <p class="reveal reveal-d2" style="font-size:0.9rem;line-height:1.8;color:var(--ink-60);margin-top:1rem;">
-          I am an ISTDP-accredited therapist and teacher — which means I not only practise this approach, I train other clinicians in it. I work from Robina on the Gold Coast, with telehealth available across Australia and internationally.
-        </p>
+        <p class="lead reveal reveal-d2" style="margin-top:1.1rem;">I've spent over two decades working with people whose difficulties don't fit neatly into a six-week programme. My clinical work is grounded in Intensive Short-Term Dynamic Psychotherapy (ISTDP) — an evidence-based approach with strong outcomes for complex presentations.</p>
+        <p class="reveal reveal-d2">Beyond her doctorate, Dr Walker completed core ISTDP training under Dr Stephen Arthey in Melbourne, followed by advanced training in Norway with Dr Patricia Coughlin. She is an accredited ISTDP therapist and teacher — not only practising this approach, but training other clinicians in it.</p>
+        <p class="reveal reveal-d3">She works from Robina on the Gold Coast, with telehealth available across Australia and internationally.</p>
         <div class="creds-list reveal reveal-d3">
           <div class="cred-row">MPsych (Clinical) — Master of Clinical Psychology</div>
           <div class="cred-row">DPsych (Clinical) — Doctorate in Clinical Psychology</div>
@@ -1107,205 +539,128 @@
 </section>
 
 
-<!-- ═══ SPECIALITIES ══════════════════════════════════════════════════ -->
+<!-- ══ SPECIALITIES ══════════════════════════════════════════════ -->
 <section id="specialities" class="section-pad" aria-labelledby="spec-h2">
+  <div class="spec-ring" style="width:700px;height:700px;top:-200px;right:-200px;" data-parallax="0.1"></div>
+  <div class="spec-ring" style="width:400px;height:400px;bottom:-100px;left:-100px;" data-parallax="-0.08"></div>
   <div class="container">
-    <div class="reveal">
-      <p class="overline" style="color:var(--blue-pale);opacity:0.7;">Areas of Specialisation</p>
-      <h2 id="spec-h2" class="h2" style="margin-top:0.9rem;">Deep expertise across the most<br>challenging presentations.</h2>
+    <div class="spec-header reveal">
+      <p class="overline">Areas of Specialisation</p>
+      <h2 id="spec-h2" class="h2" style="margin-top:0.9rem;">Deep expertise across the most challenging presentations.</h2>
     </div>
-    <div class="spec-grid" style="margin-top:3rem;" role="list">
-      <div class="spec-item reveal" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Eating Disorders</div>
-        <div class="spec-desc">Anorexia, bulimia, ARFID, and binge eating including medically complex presentations.</div>
-      </div>
-      <div class="spec-item reveal reveal-d1" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Complex Trauma</div>
-        <div class="spec-desc">Childhood adversity, relational trauma, complex PTSD, and dissociative presentations.</div>
-      </div>
-      <div class="spec-item reveal reveal-d2" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Personality Disorders</div>
-        <div class="spec-desc">Borderline, narcissistic, and other personality presentations requiring depth-oriented approaches.</div>
-      </div>
-      <div class="spec-item reveal reveal-d3" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Anxiety Disorders</div>
-        <div class="spec-desc">Generalised anxiety, social anxiety, panic disorder, and OCD presentations.</div>
-      </div>
-      <div class="spec-item reveal" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Depression</div>
-        <div class="spec-desc">Including treatment-resistant depression and depression arising from complex underlying dynamics.</div>
-      </div>
-      <div class="spec-item reveal reveal-d1" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Suicidality</div>
-        <div class="spec-desc">Assessment and ongoing therapeutic support for chronic and acute suicidal presentations.</div>
-      </div>
-      <div class="spec-item reveal reveal-d2" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">Medically Unexplained Symptoms</div>
-        <div class="spec-desc">Functional somatic presentations including chronic pain, fatigue, and conversion disorders.</div>
-      </div>
-      <div class="spec-item reveal reveal-d3" role="listitem">
-        <div class="spec-dot"></div>
-        <div class="spec-name">ISTDP Training</div>
-        <div class="spec-desc">Accredited teaching and supervision for practitioners seeking ISTDP certification and development.</div>
-      </div>
+    <div class="spec-grid" role="list">
+      <div class="spec-item reveal" role="listitem"><div class="spec-dot"></div><div class="spec-name">Eating Disorders</div><div class="spec-desc">Anorexia, bulimia, ARFID, and binge eating including medically complex presentations.</div></div>
+      <div class="spec-item reveal reveal-d1" role="listitem"><div class="spec-dot"></div><div class="spec-name">Complex Trauma</div><div class="spec-desc">Childhood adversity, relational trauma, complex PTSD, and dissociative presentations.</div></div>
+      <div class="spec-item reveal reveal-d2" role="listitem"><div class="spec-dot"></div><div class="spec-name">Personality Disorders</div><div class="spec-desc">Borderline, narcissistic, and other presentations requiring depth-oriented approaches.</div></div>
+      <div class="spec-item reveal reveal-d3" role="listitem"><div class="spec-dot"></div><div class="spec-name">Anxiety Disorders</div><div class="spec-desc">Generalised anxiety, social anxiety, panic disorder, and OCD presentations.</div></div>
+      <div class="spec-item reveal" role="listitem"><div class="spec-dot"></div><div class="spec-name">Depression</div><div class="spec-desc">Including treatment-resistant depression and depression with complex underlying dynamics.</div></div>
+      <div class="spec-item reveal reveal-d1" role="listitem"><div class="spec-dot"></div><div class="spec-name">Suicidality</div><div class="spec-desc">Assessment and ongoing therapeutic support for chronic and acute suicidal presentations.</div></div>
+      <div class="spec-item reveal reveal-d2" role="listitem"><div class="spec-dot"></div><div class="spec-name">Medically Unexplained Symptoms</div><div class="spec-desc">Functional somatic presentations including chronic pain, fatigue, and conversion disorders.</div></div>
+      <div class="spec-item reveal reveal-d3" role="listitem"><div class="spec-dot"></div><div class="spec-name">ISTDP Training</div><div class="spec-desc">Accredited teaching and supervision for practitioners seeking ISTDP certification.</div></div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ TESTIMONIALS ══════════════════════════════════════════════════ -->
+<!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
 <section id="testimonials" class="section-pad" aria-labelledby="test-h2">
   <div class="container">
     <div class="reveal">
       <p class="overline">Client Experiences</p>
       <h2 id="test-h2" class="h2" style="margin-top:0.9rem;">What it's like to work with Dr Walker.</h2>
     </div>
-    <div class="test-grid" style="margin-top:3rem;">
+    <div class="test-grid">
       <div class="test-card reveal">
         <div class="test-mark" aria-hidden="true">"</div>
         <p class="test-text">"I'd seen three therapists before Sarah. For the first time, I felt someone understood the full picture — not just the anxiety on the surface, but what was underneath it. The work was genuinely transformative."</p>
-        <div class="test-byline">
-          <div class="test-av" aria-hidden="true">A</div>
-          <div>
-            <div class="test-name">Anonymous Client</div>
-            <div class="test-detail">Individual therapy · Gold Coast</div>
-          </div>
-        </div>
+        <div class="test-byline"><div class="test-av" aria-hidden="true">A</div><div><div class="test-name">Anonymous Client</div><div class="test-detail">Individual therapy · Gold Coast</div></div></div>
       </div>
       <div class="test-card reveal reveal-d1">
         <div class="test-mark" aria-hidden="true">"</div>
         <p class="test-text">"As a psychologist myself, I needed supervision from someone who truly understood complex presentations. Sarah's ISTDP expertise is exceptional — her supervision has shaped how I work with every client."</p>
-        <div class="test-byline">
-          <div class="test-av" aria-hidden="true">P</div>
-          <div>
-            <div class="test-name">Registered Psychologist</div>
-            <div class="test-detail">Clinical supervision · Brisbane</div>
-          </div>
-        </div>
+        <div class="test-byline"><div class="test-av" aria-hidden="true">P</div><div><div class="test-name">Registered Psychologist</div><div class="test-detail">Clinical supervision · Brisbane</div></div></div>
       </div>
       <div class="test-card reveal reveal-d2">
         <div class="test-mark" aria-hidden="true">"</div>
         <p class="test-text">"I was based in London and couldn't find a comparable psychologist locally. The online sessions with Sarah have been worth every time zone adjustment. Her level of expertise is genuinely rare."</p>
-        <div class="test-byline">
-          <div class="test-av" aria-hidden="true">M</div>
-          <div>
-            <div class="test-name">Anonymous Client</div>
-            <div class="test-detail">International telehealth · London</div>
-          </div>
-        </div>
+        <div class="test-byline"><div class="test-av" aria-hidden="true">M</div><div><div class="test-name">Anonymous Client</div><div class="test-detail">International telehealth · London</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ FAQ ═══════════════════════════════════════════════════════════ -->
+<!-- ══ FAQ ════════════════════════════════════════════════════════ -->
 <section id="faq" class="section-pad" aria-labelledby="faq-h2">
   <div class="container">
     <div class="faq-wrap">
       <div class="faq-aside reveal">
         <p class="overline">Common Questions</p>
         <h2 id="faq-h2" class="h2" style="margin-top:0.9rem;">Everything you need to know before reaching out.</h2>
-        <p style="margin-top:1rem;">Finding the right psychologist is an important decision. These are the questions I hear most often.</p>
-        <a href="#book" class="btn btn-primary" style="margin-top:2rem;">
-          Book a Consultation
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <p>Finding the right psychologist is an important decision. These are the questions I hear most often.</p>
+        <a href="#book" class="btn btn-primary" style="margin-top:2rem;">Book a Consultation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-      <div class="faq-items reveal reveal-d1" role="list">
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            Do I need a referral to see you?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
+      <div class="faq-items reveal reveal-d1">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I need a referral to see you? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
           <div class="faq-a">You don't need a GP referral to see me as a private patient. However, if you have a Mental Health Treatment Plan (MHTP), you may be eligible for Medicare rebates on up to 10 sessions per year. I'm happy to discuss what works best for your situation.</div>
         </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            What is ISTDP and why do you use it?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-a">Intensive Short-Term Dynamic Psychotherapy (ISTDP) is an evidence-based approach that works with the unconscious emotional processes underlying psychological difficulties. It has strong empirical support for complex presentations — including personality disorders, treatment-resistant depression, and anxiety. Unlike generic CBT, it addresses root causes rather than managing symptoms.</div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is ISTDP and why do you use it? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a">Intensive Short-Term Dynamic Psychotherapy (ISTDP) is an evidence-based approach that works with unconscious emotional processes underlying psychological difficulties. It has strong empirical support for complex presentations — personality disorders, treatment-resistant depression, anxiety — and addresses root causes rather than managing symptoms.</div>
         </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            What does a first session involve?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-a">The first session is a comprehensive assessment — typically 90 minutes — where I gain a thorough understanding of your history, current difficulties, and goals. It's also an opportunity for you to assess whether working with me feels right. There's no pressure to commit to ongoing sessions after our first meeting.</div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What does a first session involve? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a">The first session is a comprehensive assessment — typically 90 minutes — where I gain a thorough understanding of your history, current difficulties, and goals. It's also an opportunity for you to assess whether working with me feels right. There's no pressure to commit to ongoing sessions.</div>
         </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            How do international online sessions work?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-a">International sessions are via a secure, encrypted telehealth platform. I schedule early mornings and evenings to accommodate clients in the UK, Europe, and North America. Payment is straightforward via international bank transfer or card.</div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How do international online sessions work? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a">International sessions are via a secure, encrypted telehealth platform. I schedule early mornings and evenings to accommodate clients in the UK, Europe, and North America. Payment is via international bank transfer or card.</div>
         </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            What are your fees?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-a">Standard 50-minute sessions are $280. Initial assessment sessions (90 minutes) are $420. Medicare rebates apply for patients with a valid Mental Health Treatment Plan, significantly reducing the out-of-pocket cost. I'm transparent about fees from the outset and happy to discuss options.</div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What are your fees? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a">Standard 50-minute sessions are $280. Initial assessment sessions (90 minutes) are $420. Medicare rebates apply for patients with a valid Mental Health Treatment Plan, significantly reducing out-of-pocket costs. I'm transparent about fees from the outset.</div>
         </div>
-
-        <div class="faq-item" role="listitem">
-          <button class="faq-q" aria-expanded="false">
-            I've tried therapy before and it didn't help. Why would this be different?
-            <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          </button>
-          <div class="faq-a">This is the most common thing I hear from new clients. Previous therapy that didn't work is rarely about you — it's usually about the fit or the approach. ISTDP is specifically designed for people who haven't responded to first-line treatments. I'd rather have an honest conversation about whether I'm the right fit than promise results.</div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">I've tried therapy before and it didn't help. Why would this be different? <span class="faq-q-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-a">This is the most common thing I hear from new clients. Previous therapy that didn't work is rarely about you — it's usually about the fit or approach. ISTDP is specifically designed for people who haven't responded to first-line treatments. I'd rather have an honest conversation about whether I'm the right fit than promise results.</div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ FOR GPS ════════════════════════════════════════════════════════ -->
+<!-- ══ FOR GPS ════════════════════════════════════════════════════ -->
 <section id="gp" class="section-pad" aria-labelledby="gp-h2">
   <div class="container">
     <div class="gp-grid">
       <div class="gp-left">
         <p class="overline reveal">For GPs &amp; Referring Clinicians</p>
         <h2 id="gp-h2" class="h2 reveal reveal-d1" style="margin-top:0.9rem;">A trusted specialist for your most complex patients.</h2>
-        <p class="reveal reveal-d1" style="margin-top:1rem;">I accept GP Mental Health Treatment Plan referrals and psychiatry referrals. I provide thorough, timely correspondence to support coordinated care.</p>
+        <p class="reveal reveal-d1">I accept GP Mental Health Treatment Plan referrals and psychiatry referrals. I provide thorough, timely correspondence to support coordinated care.</p>
         <div class="gp-feats reveal reveal-d2">
-          <div class="gp-feat"><div class="gp-feat-dot"></div>Specialist assessment and ISTDP-based treatment for complex presentations</div>
+          <div class="gp-feat"><div class="gp-feat-dot"></div>Specialist assessment and ISTDP-based treatment</div>
           <div class="gp-feat"><div class="gp-feat-dot"></div>Accepts Mental Health Treatment Plan referrals (Medicare)</div>
           <div class="gp-feat"><div class="gp-feat-dot"></div>Prompt written reports to referring practitioners</div>
           <div class="gp-feat"><div class="gp-feat-dot"></div>Experience with medically unexplained symptoms (MUS)</div>
           <div class="gp-feat"><div class="gp-feat-dot"></div>Collaborative approach to complex eating disorder management</div>
-          <div class="gp-feat"><div class="gp-feat-dot"></div>Clinical supervision available for GPs managing complex psychological presentations</div>
+          <div class="gp-feat"><div class="gp-feat-dot"></div>Supervision available for GPs managing complex psychological presentations</div>
         </div>
       </div>
       <div class="gp-card reveal reveal-d2">
         <h3 class="h3">Referral Details</h3>
-        <p>Use the information below to complete a referral. I'll contact your patient within 2 business days.</p>
+        <p>Complete a referral using the information below. I'll contact your patient within 2 business days.</p>
         <div class="gp-rows">
           <div class="gp-row"><span class="gp-lbl">Provider</span><span class="gp-val">Dr Sarah Walker</span></div>
           <div class="gp-row"><span class="gp-lbl">Qualifications</span><span class="gp-val">MPsych (Clin), DPsych (Clin)</span></div>
           <div class="gp-row"><span class="gp-lbl">AHPRA</span><span class="gp-val">PSY0000966143</span></div>
-          <div class="gp-row"><span class="gp-lbl">Location</span><span class="gp-val">Robina, Gold Coast QLD</span></div>
-          <div class="gp-row"><span class="gp-lbl">Telehealth</span><span class="gp-val">Available across Australia</span></div>
-          <div class="gp-row"><span class="gp-lbl">Specialities</span><span class="gp-val">Eating disorders, trauma, personality disorders, MUS</span></div>
+          <div class="gp-row"><span class="gp-lbl">Location</span><span class="gp-val">Citypods, 4/249 Scottsdale Drive, Robina QLD 4226</span></div>
+          <div class="gp-row"><span class="gp-lbl">Phone</span><span class="gp-val"><a href="tel:0755758855" style="color:var(--accent);">07 5575 8855</a></span></div>
+          <div class="gp-row"><span class="gp-lbl">Email</span><span class="gp-val"><a href="mailto:reception@robinatherapy.com.au" style="color:var(--accent);">reception@robinatherapy.com.au</a></span></div>
         </div>
-        <a href="mailto:referrals@drsarah-walker.com" class="btn btn-primary" style="width:100%;justify-content:center;">
-          Send a Referral
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href="mailto:reception@robinatherapy.com.au" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Send a Referral <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -1313,37 +668,126 @@
 </section>
 
 
-<!-- ═══ BOOKING CTA ════════════════════════════════════════════════════ -->
+<!-- ══ BOOKING ════════════════════════════════════════════════════ -->
 <section id="book" class="section-pad" aria-labelledby="book-h2">
-  <div class="book-inner container">
-    <p class="overline reveal" style="color:var(--blue-pale);opacity:0.7;">Take the First Step</p>
-    <h2 id="book-h2" class="h2 reveal reveal-d1">Ready to work together?</h2>
-    <p class="lead reveal reveal-d2" style="margin-top:1rem;">
-      I offer a brief initial telephone consultation at no charge, so we can determine whether I'm the right fit before you commit to an appointment.
-    </p>
-    <div class="book-actions reveal reveal-d3">
-      <a href="tel:+61756193010" class="btn btn-white">
-        Call to Enquire
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-      </a>
-      <a href="mailto:hello@drsarah-walker.com" class="btn btn-ghost-white">
-        Send an Enquiry
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
+  <!-- Parallax blobs -->
+  <div class="parallax-blob book-blob" data-parallax="0.12" style="width:600px;height:600px;top:-100px;right:-200px;"></div>
+  <div class="parallax-blob book-blob" data-parallax="-0.1" style="width:400px;height:400px;bottom:-100px;left:-100px;"></div>
+  <div class="container">
+    <div class="book-intro reveal">
+      <p class="overline">Make a Booking</p>
+      <h2 id="book-h2" class="h2" style="margin-top:0.9rem;">Two ways to book — choose what suits you.</h2>
+      <p class="lead" style="margin-top:1rem;">In-person sessions are held at Robina, Gold Coast. Virtual sessions are available for clients across Australia and internationally via Calendly.</p>
     </div>
-    <p class="book-note reveal reveal-d4">Current wait time: 2–3 weeks for new clients &nbsp;·&nbsp; Telehealth available immediately</p>
+
+    <div class="book-grid">
+      <!-- In-Person -->
+      <div class="book-card reveal">
+        <div class="book-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="h3">In-Person Sessions</h3>
+        <p class="book-card-sub">Gold Coast · Robina</p>
+        <p>In-person sessions are booked through Robina Therapy. Call or email the reception team to arrange an appointment. Medicare rebates available with a valid GP Mental Health Treatment Plan.</p>
+        <div class="book-details">
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Citypods, 4/249 Scottsdale Drive, Robina QLD 4226
+          </div>
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            <a href="tel:0755758855" style="color:var(--accent);font-weight:500;">07 5575 8855</a>
+          </div>
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:reception@robinatherapy.com.au" style="color:var(--accent);font-weight:500;">reception@robinatherapy.com.au</a>
+          </div>
+        </div>
+        <div class="book-card-actions">
+          <a href="tel:0755758855" class="btn btn-primary">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            Call Robina Therapy
+          </a>
+          <a href="mailto:reception@robinatherapy.com.au" class="btn btn-outline">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Reception
+          </a>
+        </div>
+      </div>
+
+      <!-- Online via Calendly -->
+      <div class="book-card reveal reveal-d1">
+        <div class="book-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="h3">Virtual Sessions</h3>
+        <p class="book-card-sub">Online · Australia &amp; International</p>
+        <p>Virtual sessions are booked directly via Calendly. Choose your preferred date and time, and you'll receive a secure telehealth link by email. Available across Australian time zones and internationally.</p>
+        <div class="book-details">
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            Australia-wide &amp; International (UK, EU, US)
+          </div>
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            Early morning &amp; evening slots available for international clients
+          </div>
+          <div class="book-detail-row">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Secure, encrypted telehealth platform
+          </div>
+        </div>
+        <div class="book-card-actions">
+          <a href="https://drsarah-walker.com/bookings/" target="_blank" rel="noopener" class="btn btn-green">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book via Calendly
+          </a>
+          <a href="https://drsarah-walker.com/bookings/" target="_blank" rel="noopener" class="btn btn-outline">
+            View Availability
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-note reveal">
+      <strong>Not sure which option is right for you?</strong> I offer a brief initial telephone consultation at no charge so we can determine whether I'm the right fit before you commit to an appointment. Call Robina Therapy on <a href="tel:0755758855" style="color:var(--accent);font-weight:600;">07 5575 8855</a> or email <a href="mailto:reception@robinatherapy.com.au" style="color:var(--accent);font-weight:600;">reception@robinatherapy.com.au</a> to arrange this.
+    </div>
   </div>
 </section>
 
 
-<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+<!-- ══ CTA BANNER ════════════════════════════════════════════════ -->
+<section id="cta-banner" class="section-pad" aria-label="Call to action">
+  <div class="cta-ring" style="width:700px;height:700px;top:50%;left:50%;margin:-350px 0 0 -350px;" data-parallax="0.08"></div>
+  <div class="cta-ring" style="width:420px;height:420px;top:50%;left:50%;margin:-210px 0 0 -210px;" data-parallax="0.14"></div>
+  <div class="container">
+    <p class="overline reveal">Ready to Begin?</p>
+    <h2 class="h2 reveal reveal-d1">Take the first step.</h2>
+    <p class="lead reveal reveal-d2" style="margin-top:1rem;">You don't need to have everything figured out before reaching out. The first conversation is just that — a conversation.</p>
+    <div class="cta-actions reveal reveal-d3">
+      <a href="tel:0755758855" class="btn btn-white">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        07 5575 8855
+      </a>
+      <a href="https://drsarah-walker.com/bookings/" target="_blank" rel="noopener" class="btn btn-ghost-white">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Online via Calendly
+      </a>
+    </div>
+    <p class="cta-note reveal reveal-d4">Current wait: 2–3 weeks for new clients &nbsp;·&nbsp; Telehealth available immediately</p>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════ -->
 <footer id="footer" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">Dr Sarah Walker</div>
         <div class="footer-brand-creds">MPsych (Clin) · DPsych (Clin) · MAPS · MCCP · ISTDP</div>
-        <p class="footer-brand-desc">Senior clinical psychologist specialising in complex presentations. Gold Coast, Australia. In-person and international telehealth.</p>
+        <p class="footer-brand-desc">Senior clinical psychologist specialising in complex presentations. Gold Coast, Australia. In-person at Robina and international telehealth.</p>
       </div>
       <div>
         <div class="footer-col-hd">Services</div>
@@ -1360,23 +804,15 @@
           <li><a href="#about">About</a></li>
           <li><a href="#specialities">Specialities</a></li>
           <li><a href="#faq">FAQs</a></li>
-          <li><a href="#book">Book</a></li>
+          <li><a href="https://drsarah-walker.com/bookings/" target="_blank" rel="noopener">Book Online</a></li>
+          <li><a href="https://www.linkedin.com/in/dr-sarah-walker-69258576/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-hd">Contact</div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Robina, Gold Coast QLD 4226
-        </div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          [Phone number to be added]
-        </div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          hello@drsarah-walker.com
-        </div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Citypods, 4/249 Scottsdale Drive,<br>Robina QLD 4226</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><a href="tel:0755758855">07 5575 8855</a></div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:reception@robinatherapy.com.au">reception@robinatherapy.com.au</a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1388,66 +824,77 @@
 </footer>
 
 
-<!-- ═══ SCRIPTS ════════════════════════════════════════════════════════ -->
+<!-- ══ SCRIPTS ════════════════════════════════════════════════════ -->
 <script>
-  // ── Nav scroll state ────────────────────────────────────────────
+  // ── Nav scroll state ───────────────────────────────────────────
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ── Mobile hamburger / drawer ───────────────────────────────────
+  // ── Mobile drawer ──────────────────────────────────────────────
   const toggle = document.getElementById('navToggle');
   const drawer = document.getElementById('navDrawer');
   let drawerOpen = false;
-
-  function openDrawer() {
-    drawerOpen = true;
-    drawer.classList.add('open');
-    toggle.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close menu');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeDrawer() {
-    drawerOpen = false;
-    drawer.classList.remove('open');
-    toggle.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-    document.body.style.overflow = '';
-  }
-
+  function openDrawer()  { drawerOpen = true;  drawer.classList.add('open');    toggle.classList.add('open');    toggle.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
+  function closeDrawer() { drawerOpen = false; drawer.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
   toggle.addEventListener('click', () => drawerOpen ? closeDrawer() : openDrawer());
-
-  // Close on Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawerOpen) closeDrawer(); });
+  document.addEventListener('click',   e => { if (drawerOpen && !drawer.contains(e.target) && !toggle.contains(e.target)) closeDrawer(); });
 
-  // Close on outside tap
-  document.addEventListener('click', e => {
-    if (drawerOpen && !drawer.contains(e.target) && !toggle.contains(e.target)) closeDrawer();
-  });
-
-  // ── Scroll reveal ────────────────────────────────────────────────
-  const revealEls = document.querySelectorAll('.reveal');
+  // ── Scroll reveal ──────────────────────────────────────────────
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // ── FAQ accordion ────────────────────────────────────────────────
+  // ── FAQ accordion ──────────────────────────────────────────────
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      const item = btn.closest('.faq-item'), isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
     });
   });
+
+  // ── Parallax engine ────────────────────────────────────────────
+  // Collects all [data-parallax] elements and moves them on scroll
+  // Speed > 0 = moves upward (slower than page), < 0 = moves downward
+  const parallaxEls = [];
+  document.querySelectorAll('[data-parallax]').forEach(el => {
+    const speed = parseFloat(el.dataset.parallax);
+    // Get element's natural offset from top of document
+    parallaxEls.push({ el, speed });
+  });
+
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    parallaxEls.forEach(({ el, speed }) => {
+      // Only apply parallax when element is plausibly in viewport
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+      const offset = scrollY * speed;
+      el.style.transform = `translate3d(0, ${offset}px, 0)`;
+    });
+    ticking = false;
+    lastScrollY = scrollY;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+  }, { passive: true });
+
+  // Initial call
+  updateParallax();
+
+  // Respect reduced motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    parallaxEls.forEach(({ el }) => { el.style.transform = ''; });
+    parallaxEls.length = 0; // disable
+  }
 </script>
 
 </body>
